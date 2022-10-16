@@ -17,15 +17,15 @@ namespace EPAM_TAO_UI_TESTS.BaseTestConfig
         private string strBrowser { get { return ConfigurationManager.AppSettings["Browser"].ToString(); } }
         private string strSiteURL { get { return ConfigurationManager.AppSettings["SiteURL"].ToString(); } }
         private string strAUT { get { return ConfigurationManager.AppSettings["AUT"].ToString(); } }
-        protected string strUserName { get { return ConfigurationManager.AppSettings["UserName"].ToString(); } }
-        protected string strPassword { get { return ConfigurationManager.AppSettings["Password"].ToString(); } }
-        protected Exception testEx { get; set; }
-        protected ProductsPage productsPage {get; set;}
-        protected CartPage cartPage { get; set; }
-        protected CheckoutPage checkoutPage { get; set; }
+        public string strUserName { get { return ConfigurationManager.AppSettings["UserName"].ToString(); } }
+        public string strPassword { get { return ConfigurationManager.AppSettings["Password"].ToString(); } }
+        public Exception testEx { get; set; }
+        public ProductsPage productsPage {get; set;}
+        public CartPage cartPage { get; set; }
+        public CheckoutPage checkoutPage { get; set; }
 
         [SetUp]
-        protected void setupDriverSession()
+        public void setupDriverSession()
         {
             try
             {
@@ -43,7 +43,7 @@ namespace EPAM_TAO_UI_TESTS.BaseTestConfig
         }
 
         [TearDown]
-        protected void closeDriverSession()
+        public void closeDriverSession()
         {
             try
             {
@@ -78,7 +78,7 @@ namespace EPAM_TAO_UI_TESTS.BaseTestConfig
         }
 
         [OneTimeTearDown]
-        protected void CloseAll()
+        public void CloseAll()
         {
             try
             {
